@@ -7,4 +7,11 @@ export default defineConfig({
     vue(),
     WindiCSS(),
   ],
+  resolve: {
+    alias: {
+      '@/': '/src/',
+      '@components': '/src/components',
+      '@views': '/src/views',
+    },
+  },
 })
