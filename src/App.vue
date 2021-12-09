@@ -1,69 +1,17 @@
-<script>
-import PsijInput from './components/PsijInput.vue'
-
-export default {
-  components: {
-    PsijInput,
-  },
-
-  data () {
-    return {
-      email: '',
-      type: undefined,
-    }
-  },
-
-  methods: {
-    reset ($event) {
-      // this.email = ''
-    },
-    login ($event) {
-      console.log('login', $event)
-    },
-    log ($event) {
-      console.log($event)
-    },
-  },
-}
-</script>
-
 <template>
-  <form
-    class="form"
-    @submit.prevent="login($event)"
-    @reset="reset($event)"
-  >
-    <PsijInput
-      v-model="email"
-      :type="type"
-      :required="true"
-      placeholder="james.bond@mi6.gov.uk"
-      @click="log($event)"
-    />
-    <br>
-    {{ email }}
-    <br>
-    type :
-    <PsijInput
-      v-model="type"
-      type="password"
-    />
-    <br>
-    <PsijInput
+  <nav>
+    <router-link
+      :to="{name: 'Home'}"
       class="btn"
-      type="submit"
-      value="OK"
-    />
-    <PsijInput
+    >
+      AppHome
+    </router-link>
+    <router-link
+      :to="{name: 'Login'}"
       class="btn"
-      type="reset"
-      value="Annuler"
-    />
-  </form>
+    >
+      AppLogin
+    </router-link>
+  </nav>
+  <router-view />
 </template>
-
-<style scoped>
-.form {
-  @apply bg-gray-700;
-}
-</style>
