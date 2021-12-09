@@ -1,3 +1,13 @@
+<script>
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  mounted () {
+    console.log(import.meta.env.VITE_EXPERIMENTATION)
+    console.log(import.meta.env.KEY)
+  },
+})
+</script>
 <template>
   <nav>
     <router-link

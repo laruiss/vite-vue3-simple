@@ -2,7 +2,7 @@ import './main.css'
 import 'virtual:windi.css'
 import 'virtual:windi-devtools'
 
-import { OhVueIcon, addIcons } from 'oh-vue-icons'
+import { OhVueIcon, addIcons } from 'oh-vue-icons/dist/index.esm.min.js'
 import {
   FaExclamationTriangle,
   FaSyncAlt,
@@ -10,7 +10,7 @@ import {
   FaTimesCircle,
   FaRegularEye,
   FaRegularEyeSlash,
-} from 'oh-vue-icons/icons'
+} from 'oh-vue-icons/icons/fa/index.js'
 
 import { createApp } from 'vue'
 

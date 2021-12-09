@@ -1,0 +1,16 @@
+{
+  "affaires": [
+    {
+      "id": 1,
+      "location": "Paris"
+    },
+    {
+      "id": 2,
+      "location": "Marseille"
+    },
+    {
+      "id": 3,
+      "location": "Lyon"
+    }
+  ]
+}

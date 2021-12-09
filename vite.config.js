@@ -14,4 +14,12 @@ export default defineConfig({
       '@views': '/src/views',
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:4000',
+        rewrite: (path) => path.replace(/^\/api\/v1/, ''),
+      },
+    },
+  },
 })

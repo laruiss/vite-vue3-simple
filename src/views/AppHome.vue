@@ -5,7 +5,12 @@ export default {
 </script>
 
 <template>
-  Composant AppHome
+  <router-link
+    :to="{ name: 'Affaire', params: { id: 1 } }"
+    class="btn"
+  >
+    AffaireDetails
+  </router-link>
 </template>
 
 <style scoped>
