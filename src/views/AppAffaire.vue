@@ -1,9 +1,12 @@
 <script setup>
-import { onMounted, watch } from 'vue'
+import { storeToRefs } from 'pinia'
+import { onMounted, toRaw, watch } from 'vue'
 
-import { useStore } from 'vuex'
+import { useAffaire } from '../pinia/index.js'
 
-const store = useStore()
+const affaireStore = useAffaire()
+
+const { affaire } = storeToRefs(affaireStore)
 
 const props = defineProps({
   id: {
@@ -12,8 +15,8 @@ const props = defineProps({
   },
 })
 
-function fetchAffaire (id) {
-  return store.dispatch('getStoredAffaire', id)
+const fetchAffaire = (id) => {
+  affaireStore.fetchAffaire(props.id)
 }
 
 onMounted(() => fetchAffaire(props.id))
@@ -27,6 +30,13 @@ watch(() => props.id, (newValue, oldValue) => {
 
 <template>
   Affaire: {{ affaire?.id }}
+
+  <pre style="padding: 1rem;">{{ JSON.stringify(affaire, null, '  ', 2) }}</pre>
+  <p>
+    {{ affaire.victimFirstname }}
+    {{ affaire.victimLastname }}
+    {{ affaire.victimDOB }}
+  </p>
 
   <router-link
     :to="{ name: 'Affaire', params: { id: 2 } }"

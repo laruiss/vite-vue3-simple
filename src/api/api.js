@@ -72,7 +72,8 @@ export async function getAffaires () {
  */
 export async function getAffaire (affaireId) {
   const response = await apiClient.get(`/affaires/${affaireId}`)
-  return response.data.affaire
+  // return response.data.affaire // Avec votre API
+  return response.data // Avec json-server
 }
 
 /**

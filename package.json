@@ -28,6 +28,7 @@
     "localforage": "^1.10.0",
     "lodash.isequal": "^4.5.0",
     "oh-vue-icons": "^1.0.0-rc1",
+    "pinia": "^2.0.6",
     "uniqid": "^5.4.0",
     "vue": "^3.2.24",
     "vue-router": "^4.0.12",

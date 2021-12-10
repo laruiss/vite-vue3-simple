@@ -14,6 +14,7 @@ import {
 
 import { createApp } from 'vue'
 
+import { createPinia } from 'pinia'
 import router from './router.js'
 import store from './store/index.js'
 
@@ -28,7 +29,10 @@ addIcons(
   FaRegularEyeSlash,
 )
 
+const pinia = createPinia()
+
 createApp(App)
+  .use(pinia)
   .use(store)
   .use(router)
   .component('VIcon', OhVueIcon)

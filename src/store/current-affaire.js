@@ -437,7 +437,7 @@ export default {
       let affaire = (await localforage.getItem(currentAffaireId)) || {}
       try {
         const affaireFromDB = await api.getAffaire(currentAffaireId)
-        await dispatch('getSampleSetByAffaireId', currentAffaireId)
+        // await dispatch('getSampleSetByAffaireId', currentAffaireId)
         affaire = prepareAffaireForLocalForage(affaireFromDB)
       } catch ({ message }) {
         dispatch('setMessage', { message, type: 'warning' })

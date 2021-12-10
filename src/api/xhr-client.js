@@ -30,17 +30,17 @@ apiClient.interceptors.request.use(async function addAuthHeader (config) {
 
 apiClient.interceptors.response.use(
   response => {
-    const isSuccess = response?.data?.success
-    const isPDF = (response?.headers || {})['content-type'] === 'application/pdf'
-    if (!isSuccess && !isPDF) {
-      const message = response?.data?.message || 'Oups ! Une erreur inconnue est survenue…'
-      const messages = response?.data?.messages
-      const error = new Error(message)
-      error.messages = messages
-      return Promise.reject(error)
-    }
-    store.dispatch('connectionAvailable')
-    return Promise.resolve(response)
+    // const isSuccess = response.status >= 200 && response.status < 300
+    // const isPDF = (response?.headers || {})['content-type'] === 'application/pdf'
+    // if (!isSuccess && !isPDF) {
+    //   const message = response?.data?.message || 'Oups ! Une erreur inconnue est survenue…'
+    //   const messages = response?.data?.messages
+    //   const error = new Error(message)
+    //   error.messages = messages
+    //   return Promise.reject(error)
+    // }
+    // store.dispatch('connectionAvailable')
+    return response
   },
   error => {
     const response = error?.response
