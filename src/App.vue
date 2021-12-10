@@ -8,6 +8,7 @@ export default defineComponent({
   },
 })
 </script>
+
 <template>
   <nav>
     <router-link

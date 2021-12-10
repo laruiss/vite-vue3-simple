@@ -55,11 +55,14 @@ export default {
 
   emits: ['update:modelValue', 'select-suggestion'],
 
-  setup (_, ctx) {
+  setup (props, ctx) {
     const tmpType = ref(ctx.attrs.type)
     const eyeIcon = computed(() => tmpType.value === 'password' ? 'eye' : 'eye-slash')
 
+    const hasSuggestions = computed(() => props.suggestions && props.suggestions.length)
+
     return {
+      hasSuggestions,
       syncResultIcon: undefined,
       tmpType,
       eyeIcon,

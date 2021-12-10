@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import AppHome from '@views/AppHome.vue'
 import AppLogin from '@views/AppLogin.vue'
-import AffaireDetails from '@views/AffaireDetails.vue'
+import AppAffaire from '@views/AppAffaire.vue'
 import NotFound from '@views/NotFound.vue'
 
 const suffix = ' - PSIJ'
@@ -26,7 +26,7 @@ const routes = [
   {
     path: '/affaire/:id([0-9]+)',
     name: 'Affaire',
-    component: AffaireDetails,
+    component: AppAffaire,
     meta: {
       title: 'Affaire ' + suffix,
     },
@@ -34,8 +34,8 @@ const routes = [
   },
   // {
   //   path: '/affaire/:name([-a-zA-Z][-a-zA-Z0-9]+)',
-  //   name: 'Affaire',
-  //   component: AffaireDetails,
+  //   name: 'AffaireName',
+  //   component: AppAffaire,
   //   meta: {
   //     title: 'Affaire ' + suffix,
   //   },

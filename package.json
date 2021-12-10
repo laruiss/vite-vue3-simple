@@ -20,8 +20,17 @@
     "windicss": "^3.2.1"
   },
   "dependencies": {
+    "ag-grid-community": "^26.2.0",
+    "ag-grid-vue3": "^26.2.0",
+    "axios": "^0.24.0",
+    "date-fns": "^2.27.0",
+    "date-fns-tz": "^1.1.6",
+    "localforage": "^1.10.0",
+    "lodash.isequal": "^4.5.0",
     "oh-vue-icons": "^1.0.0-rc1",
+    "uniqid": "^5.4.0",
     "vue": "^3.2.24",
-    "vue-router": "^4.0.12"
+    "vue-router": "^4.0.12",
+    "vuex": "^4.0.2"
   }
 }

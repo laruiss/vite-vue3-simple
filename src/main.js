@@ -15,6 +15,7 @@ import {
 import { createApp } from 'vue'
 
 import router from './router.js'
+import store from './store/index.js'
 
 import App from './App.vue'
 
@@ -28,6 +29,7 @@ addIcons(
 )
 
 createApp(App)
+  .use(store)
   .use(router)
   .component('VIcon', OhVueIcon)
   .mount('#app')
